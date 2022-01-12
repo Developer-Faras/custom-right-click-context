@@ -13,6 +13,7 @@ body{
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .body{
@@ -21,7 +22,7 @@ body{
     min-height: 100vh;
     min-width: 100vw;
     overflow: hidden;
-    position: relative;
+    /* position: relative; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,11 +34,16 @@ body{
     width: 300px;
     background: #fff;
     border-radius: 5px;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.452);
+    visibility: hidden;
+    position: absolute;
 }
 
 .body .menu{
     list-style: none;
     padding: 10px;
+    position: relative;
+    z-index: 100;
 }
 
 .body .item {
@@ -51,6 +57,8 @@ body{
     color: #333;
     font-weight: 500;
     margin-bottom: 2px;
+    display: flex;
+    align-items: center;
 }
 
 .body .item:hover{
@@ -67,4 +75,61 @@ body{
     align-items: center;
     padding: 8px 18px;
     border-top: 2px solid #e9e6e6;
+}
+
+/* Dropdwon Desine */
+.item.dropdwon{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.item.dropdwon .dropdwon-arrow{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.item.dropdwon .dropdwon-content{
+    position: absolute;
+    width: 200px;
+    top: 0;
+    right: -210px;
+    background: rgb(255, 255, 255);
+    z-index: 10;
+    /* padding: 10px; */
+    border-radius: 0px 6px 6px 0px;
+    list-style: none;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.479);
+    transition: all 0.4s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.item.dropdwon .dropdwon-content .dropdwon-item {
+    display: block;
+    background: #fbfafa;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+}
+.item.dropdwon .dropdwon-content .dropdwon-item i {
+    font-size: 19px;
+    margin-right: 8px;
+}
+
+.item.dropdwon .dropdwon-content .dropdwon-item:hover{
+    background: #f2f2f2;
+}
+
+.item.dropdwon:hover .dropdwon-content{
+    visibility: visible;
+    opacity: 1;
 }
